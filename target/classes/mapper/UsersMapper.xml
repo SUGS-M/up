@@ -2,9 +2,10 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.myy.up.mapper.UsersMapper">
-    <select id="findby" resultType="com.myy.up.vo.UsersVo"
-            parameterType="com.myy.up.vo.UsersSearchVo">
+
+<mapper namespace="com.myy.up.Mapper.UsersMapper">
+    <select id="findby" resultType="com.myy.up.Vo.UsersVo"
+            parameterType="com.myy.up.Vo.UsersSearchVo">
         SELECT * FROM users t WHERE t.is_deleted='0'
     </select>
 </mapper>
