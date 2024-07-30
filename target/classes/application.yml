@@ -1,0 +1,14 @@
+server:
+  port: 9090
+
+spring:
+  application:
+    name: up
+
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    password: 187369
+    url: jdbc:mysql://localhost:3306/up?useUnicode=true&characterEncoding=UTF-8
+    username: root
+
+
