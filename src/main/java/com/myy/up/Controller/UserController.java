@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("user/")
+@RequestMapping("user")
 public class UserController {
 
     private final UsersService usersService;
@@ -18,7 +18,7 @@ public class UserController {
         this.usersService = usersService;
     }
 
-    @GetMapping("test")
+    @GetMapping("/test")
     public ResponseEntity<List<UsersVo>> test(){
         return ResponseEntity.ok(usersService.findBy());
     }

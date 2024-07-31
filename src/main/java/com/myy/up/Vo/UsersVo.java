@@ -1,5 +1,6 @@
 package com.myy.up.Vo;
 
+import com.alibaba.excel.annotation.ExcelProperty;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
@@ -24,11 +25,13 @@ public class UsersVo implements Serializable {
     /**
      * 
      */
+    @ExcelProperty(index = 0)
     private String username;
 
     /**
      * 
      */
+    @ExcelProperty(index = 1)
     private String password;
 
     /**
