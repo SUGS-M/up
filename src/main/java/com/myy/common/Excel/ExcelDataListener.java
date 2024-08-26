@@ -3,9 +3,7 @@ package com.myy.common.Excel;
 import com.alibaba.excel.context.AnalysisContext;
 import com.alibaba.excel.read.listener.ReadListener;
 import com.alibaba.excel.util.ListUtils;
-import com.myy.common.Excel.ExcelService;
-import com.myy.common.Excel.ExcelVo;
-import com.myy.up.Vo.UsersVo;
+import com.myy.user.vo.UserVo;
 import lombok.extern.slf4j.Slf4j;
 
 
@@ -13,14 +11,14 @@ import java.util.List;
 
 @Slf4j
 //ToDo UsersVo
-public class ExcelDataListener implements ReadListener<UsersVo> {
+public class ExcelDataListener implements ReadListener<UserVo> {
     /**
      * 每隔5条存储数据库，实际使用中可以100条，然后清理list ，方便内存回收
      */
     private static final int BATCH_COUNT = 100;
 
     //ToDo UsersVo
-    private List<UsersVo> cachedDataList = ListUtils.newArrayListWithExpectedSize(BATCH_COUNT); //缓存的数据
+    private List<UserVo> cachedDataList = ListUtils.newArrayListWithExpectedSize(BATCH_COUNT); //缓存的数据
 
     /**假设这个是一个DAO，当然有业务逻辑这个也可以是一个service。当然如果不用存储这个对象没用。*/
     private final ExcelService excelService;
@@ -36,7 +34,7 @@ public class ExcelDataListener implements ReadListener<UsersVo> {
      */
     //ToDo UsersVo
     @Override
-    public void invoke(UsersVo data, AnalysisContext context) {
+    public void invoke(UserVo data, AnalysisContext context) {
         cachedDataList.add(data);
         // 防止OOM
         if (cachedDataList.size() >= BATCH_COUNT) {

@@ -1,8 +1,8 @@
-package com.myy.up.Mapper;
+package com.myy.user.mapper;
 
-import com.myy.up.Entity.Users;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.myy.up.Vo.UsersVo;
+import com.myy.user.entity.User;
+import com.myy.user.vo.UserVo;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
@@ -14,9 +14,9 @@ import java.util.List;
 * @Entity com.myy.up.entity.Users
 */
 @Mapper
-public interface UsersMapper extends BaseMapper<Users> {
+public interface UserMapper extends BaseMapper<User> {
 
-    List<UsersVo> findby();
+    List<UserVo> findby();
 }
 
 

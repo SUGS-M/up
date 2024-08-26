@@ -5,7 +5,7 @@
 
 <mapper namespace="com.myy.common.Excel.ExcelMapper">
     <!-- 假设Users对象包含id, username, email等字段，并且id是自增的 -->
-<!--    <insert id="save" parameterType="com.myy.up.Vo.UsersVo" >-->
+<!--    <insert id="save" parameterType="com.myy.user.vo.UserVo" >-->
 <!--        INSERT INTO users (username, password)-->
 <!--        VALUES (#{username}, #{password})-->
 <!--    </insert>-->
@@ -17,7 +17,7 @@
         </foreach>
     </insert>
 
-    <insert id="saveBy" parameterType="com.myy.up.Vo.UsersVo">
+    <insert id="saveBy" parameterType="com.myy.user.vo.UserVo">
         INSERT INTO users (username, password)
         VALUES (#{username}, #{password})
     </insert>
