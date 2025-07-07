@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.myy.common.Excel.ExcelMapper">
+    <!-- 假设Users对象包含id, username, email等字段，并且id是自增的 -->
+<!--    <insert id="save" parameterType="com.myy.user.vo.UserVo" >-->
+<!--        INSERT INTO users (username, password)-->
+<!--        VALUES (#{username}, #{password})-->
+<!--    </insert>-->
+    <insert id="save" parameterType="java.util.List">
+        INSERT INTO users (username, password)
+        VALUES
+        <foreach collection="list" item="user" index="index" separator=",">
+            (#{user.username}, #{user.password})
+        </foreach>
+    </insert>
+
+    <insert id="saveBy" parameterType="com.myy.user.vo.UserVo">
+        INSERT INTO users (username, password)
+        VALUES (#{username}, #{password})
+    </insert>
+</mapper>
+
+
+<!--        // 在 Mapper 接口中保持单个插入方法-->
+<!--        public void saveUser(UsersVo user);-->
+
+<!--        // 在服务层或 DAO 层中-->
+<!--        SqlSession session = sqlSessionFactory.openSession(ExecutorType.BATCH);-->
+<!--        try {-->
+<!--        UserMapper mapper = session.getMapper(UserMapper.class);-->
+<!--        for (UsersVo user : cachedDataList) {-->
+<!--        mapper.saveUser(user);-->
+<!--        }-->
+<!--        session.commit(); // 提交会批量执行所有之前的插入-->
+<!--        } finally {-->
+<!--        session.close();-->
+<!--        }-->

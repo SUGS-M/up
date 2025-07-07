@@ -13,9 +13,9 @@
       <schema-mapping>
         <introspection-scope>
           <node kind="schema">
+            <name qname="up" />
             <name qname="@" />
             <name qname="mysql" />
-            <name qname="up" />
           </node>
         </introspection-scope>
       </schema-mapping>
